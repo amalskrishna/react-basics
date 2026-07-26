@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>exercise 1a</title>
+    </head>
+    <body>
+        <div class="js-cont"></div>
+        <script src="https://unpkg.com/supersimpledev@8.6.4/external-library.js"></script>
+        <script src="https://unpkg.com/supersimpledev/react.js"></script>
+        <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+        <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+        
+        <script type="text/babel">
+            const productCost = 2*8 +10;
+            const shippingCost = 5;
+            console.log(productCost);
+            const para = (
+                <div>
+                    <p> product cost: ${productCost}</p>
+                    <p> shipping cost: ${shippingCost}</p>
+                    <p> total cost: ${productCost + shippingCost}</p>
+                    <button>Place order</button>
+                </div>
+            );
+            const container = document.querySelector('.js-cont');
+            ReactDOM.createRoot(container).render(para);
+        </script>
+    </body>
+</html>

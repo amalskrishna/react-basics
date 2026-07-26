@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>exercise 1a</title>
+    </head>
+    <body>
+        <div class="js-cont"></div>
+        <script src="https://unpkg.com/supersimpledev@8.6.4/external-library.js"></script>
+        <script src="https://unpkg.com/supersimpledev/react.js"></script>
+        <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+        <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+        <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+        
+        <script type="text/babel">
+            const date = dayjs().format('MMMM D');
+            console.log(date);
+            const time = dayjs().format('HH:mm:ss');
+            const para = (
+                <div>
+                    <p>Today is {date}</p>
+                    <p>Current time is {time}</p>
+                </div>
+            );
+            const container = document.querySelector('.js-cont');
+            const root = ReactDOM.createRoot(container);
+            root.render(para);
+            setInterval(() => {
+                const para = (
+                    <div>
+                        <p>Today is {date}</p>
+                        <p>Current time is {dayjs().format('HH:mm:ss')}</p>
+                    </div>
+                );
+                root.render(para);
+            }, 1000)
+        </script>
+    </body>
+</html>
